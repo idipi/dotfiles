@@ -1,0 +1,39 @@
+# ---- history ----
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt INC_APPEND_HISTORY
+setopt HIST_SAVE_NO_DUPS
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+
+# ---- keys ----
+bindkey -e
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+
+# ---- nice-to-haves ----
+setopt autocd
+setopt correct
+
+# ---- completion ----
+eval "$(/opt/homebrew/bin/brew shellenv)"
+autoload -Uz compinit
+compinit -d ~/.zcompdump
+
+# ---- aliases ----
+[[ -r ~/.zsh_aliases ]] && source ~/.zsh_aliases
+
+eval "$(starship init zsh)"
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# vital completions
+source /opt/homebrew/etc/bash_completion.d/az
+source <(kubectl completion zsh)

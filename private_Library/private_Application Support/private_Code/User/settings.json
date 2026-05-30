@@ -1,0 +1,166 @@
+{
+  // editorSettings
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.lineHeight": 22,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.wordWrap": "off",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.inlayHints.enabled": "onUnlessPressed",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.suggest.preview": true,
+  "editor.hover.delay": 300,
+  "editor.hover.sticky": true,
+  "editor.renderLineHighlight": "gutter",
+  "editor.autoClosingBrackets": "always",
+  "editor.foldingStrategy": "indentation",
+  "breadcrumbs.enabled": true,
+  // formatting
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  // characters
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.invisibleCharacters": true,
+  // files
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.autoSave": "onFocusChange",
+  "files.associations": {
+    "*.tf": "terraform",
+    "*.hcl": "terraform",
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/__pycache__": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.tree.indent": 16,
+  "workbench.sideBar.location": "right",
+  "window.menuBarVisibility": "compact",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  // terminalCuteness
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.gpuAcceleration": "auto",
+  "terminal.integrated.enablePersistentSessions": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.initialHint": false,
+  "azureTerraform.terminal": "integrated",
+  // VCS/Git (GitLens)
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.codeLens": true,
+  "gitlens.currentLine.enabled": true,
+  "gitlens.currentLine.format": "${author}, ${agoOrDate} · ${message}",
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.annotations.details": true,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.blame.highlight.enabled": true,
+  "gitlens.telemetry.enabled": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  // disableTelemetry & other
+  "telemetry.telemetryLevel": "off",
+  "update.showReleaseNotes": false,
+  "chat.disableAIFeatures": true,
+  "extensions.ignoreRecommendations": false,
+  "security.workspace.trust.enabled": false,
+  "azureTerraform.survey": {
+    "surveyPromptDate": "2026-06-08T21:45:14.145Z",
+    "surveyPromptIgnoredCount": 0
+  },
+  "claudeCode.preferredLocation": "panel",
+  // Terraform
+  "terraform.languageServer.enable": true,
+  "terraform.languageServer.path": "",
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  // RedHat/YAML
+  "yaml.validate": true,
+  "yaml.hover": true,
+  "yaml.completion": true,
+  "yaml.format.enable": true,
+  "yaml.schemas": {
+    "kubernetes": [
+      "**/manifests/**/*.yaml",
+      "**/k8s/**/*.yaml",
+      "**/*deployment*.yaml",
+      "**/*service*.yaml"
+    ]
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep"
+  },
+  // RedHat/Ansible
+  "ansible.validation.enabled": true,
+  "ansible.validation.lint.enabled": true,
+  "ansible.validation.lint.path": "ansible-lint", // check presence in PATH
+  "ansible.completion.provideRedirectModules": true,
+  "ansible.completion.provideModuleOptionAliases": true,
+  "[ansible]": {
+    "editor.defaultFormatter": "redhat.ansible",
+    "editor.tabSize": 2
+  },
+  // Python actually
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.defaultInterpreterPath": "python3",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+  // ErrorLens
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "warning"
+  ], // to not include any "info" and "hint" here.
+  "errorLens.delay": 300,
+  "errorLens.followCursor": "closestProblem",
+  "errorLens.messageMaxChars": 100,
+}
