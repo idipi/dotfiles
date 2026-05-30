@@ -1,11 +1,7 @@
-# starship.toml (fast "macOS dev bro")
-# Put at: ~/.config/starship.toml
-
+# ~/.config/starship.toml
 add_newline = false
 continuation_prompt = "[▸▹ ](dimmed white)"
-
-# One clean line, no right prompt (right prompt tends to be heavier/noisier)
-format = "$directory$git_branch$git_status$cmd_duration$character"
+format = "$directory$git_branch$git_status$terraform$kubernetes$helm$cmd_duration$character"
 right_format = ""
 
 [character]
@@ -18,8 +14,7 @@ vimcmd_symbol = "[❮](bold cyan)"
 home_symbol = "⌂"
 truncation_length = 3
 truncate_to_repo = true
-read_only = " "
-use_os_path_sep = true
+read_only = " "
 style = "bold cyan"
 format = "[$path]($style)[$read_only](bold red) "
 
@@ -28,14 +23,13 @@ min_time = 700
 format = "[took $duration](dimmed white) "
 
 [git_branch]
-symbol = " "
+symbol = " "
 style = "bold purple"
 format = "[$symbol$branch]($style) "
 
 [git_status]
 style = "bold yellow"
 format = "([$all_status$ahead_behind]($style) )"
-# Keep it readable
 conflicted = "✖"
 ahead = "⇡${count}"
 behind = "⇣${count}"
@@ -47,35 +41,49 @@ staged = "+"
 renamed = "»"
 deleted = "✘"
 
-# --- hard disable noisy/heavy stuff ---
+[terraform]
+disabled = false
+symbol = "tf"
+format = "[$symbol $workspace](bold blue) "
+detect_files = ["*.tf", "*.tfvars"]
+detect_folders = [".terraform"]
+
+[kubernetes]
+disabled = false
+symbol = "k8s"
+format = "[$symbol $context(/$namespace)](bold cyan) "
+detect_files = ["kustomization.yaml", "kustomization.yml"]
+detect_folders = ["k8s", "manifests", "helm"]
+
+[helm]
+disabled = false
+symbol = "helm"
+format = "[$symbol $version](dimmed cyan) "
+
+# --- everything else off ---
 [aws]
 disabled = true
 [gcloud]
 disabled = true
 [azure]
 disabled = true
-[kubernetes]
-disabled = true
 [docker_context]
+disabled = true
+[nodejs]
+disabled = true
+[python]
+disabled = true
+[rust]
+disabled = true
+[swift]
+disabled = true
+[package]
 disabled = true
 [singularity]
 disabled = true
 [openstack]
 disabled = true
-
 [hostname]
-disabled = true
-[localip]
-disabled = true
-[shlvl]
-disabled = true
-[shell]
-disabled = true
-[env_var]
-disabled = true
-[jobs]
-disabled = true
-[sudo]
 disabled = true
 [username]
 disabled = true
@@ -85,34 +93,21 @@ disabled = true
 disabled = true
 [memory_usage]
 disabled = true
-[package]
-disabled = true
 [nix_shell]
 disabled = true
 [container]
 disabled = true
 [status]
 disabled = true
-
-# Languages: show only when in a real project (fast + clean)
-[nodejs]
-disabled = false
-format = "[node $version](dimmed green) "
-detect_files = ["package.json", "package-lock.json", "yarn.lock", "pnpm-lock.yaml"]
-detect_folders = ["node_modules"]
-
-[python]
-disabled = false
-format = "[py $version](dimmed yellow) "
-detect_files = ["pyproject.toml", "requirements.txt", "Pipfile", "poetry.lock"]
-detect_extensions = ["py"]
-
-[rust]
-disabled = false
-format = "[rs $version](dimmed red) "
-detect_files = ["Cargo.toml"]
-
-[swift]
-disabled = false
-format = "[sw $version](dimmed red) "
-detect_files = ["Package.swift"]
+[jobs]
+disabled = true
+[sudo]
+disabled = true
+[shell]
+disabled = true
+[shlvl]
+disabled = true
+[env_var]
+disabled = true
+[localip]
+disabled = true

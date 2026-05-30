@@ -125,7 +125,9 @@
       "**/manifests/**/*.yaml",
       "**/k8s/**/*.yaml",
       "**/*deployment*.yaml",
-      "**/*service*.yaml"
+      "**/*service*.yaml",
+      "**/*kustomization*.yaml",
+      "**/*kustomization*.yml",
     ]
   },
   "[yaml]": {
